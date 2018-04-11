@@ -1,11 +1,12 @@
 'use strict';
 var path = require('path');
 var fs = require('fs');
-
+var pkgJson = require('./package.json');
 
 module.exports = {
     rewrite: rewrite,
-    rewriteFile: rewriteFile
+    rewriteFile: rewriteFile,
+    rootPath: rootPath,
 };
 
 function rewriteFile(args) {
@@ -59,3 +60,15 @@ function rewrite(args) {
 
     return lines.join('\n');
 }
+
+function rootPath() {
+  var rootPath = 'app/js/';
+  if (pkgJson.rootPath) {
+    rootPath = pkgJson.rootPath;
+    if (rootPath.match(/\/$/) === null) {
+      rootPath = rootPath + '/'
+    }
+  }
+  
+  return rootPath;
+};

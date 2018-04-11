@@ -3,8 +3,8 @@
 var path = require('path'),
     util = require('util'),
     yeoman = require('yeoman-generator'),
-    scriptBase = require('../script-base');
-
+    scriptBase = require('../script-base'),
+    backboneUtils = require('../util.js');
 
 var Generator = module.exports = function Generator() {
   yeoman.generators.NamedBase.apply(this, arguments);
@@ -18,5 +18,5 @@ Generator.prototype.createViewFiles = function createViewFiles() {
   this.dirPath = (typeof this.arguments[1] !== 'undefined') ? '/' + this.arguments[1] : '';
   this.pathToModel = (typeof this.arguments[2] !== 'undefined') ? this.arguments[2] + '/' : '';
 
-  this.copy('js/collection.js', 'app/js/collections' + this.dirPath + '/' + this.name + '.js');
+  this.copy('js/collection.js', backboneUtils.rootPath() + 'collection' + this.dirPath + '/' + this.name + '.js');
 };

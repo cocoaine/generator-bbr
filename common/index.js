@@ -1,6 +1,7 @@
 var path = require('path');
 var util = require('util');
 var yeoman = require('yeoman-generator');
+var backboneUtils = require('../util.js');
 
 module.exports = Generator;
 
@@ -44,7 +45,7 @@ util.inherits(Generator, yeoman.generators.Base);
 
 Generator.prototype.createDirLayout = function createDirLayout() {
   this.dirs.forEach(function (dir) {
-    this.log.create('app/js/' + dir);
-    this.mkdir(path.join('app/js', dir));
+    this.log.create(backboneUtils.rootPath() + dir);
+    this.mkdir(path.join(backboneUtils.rootPath, dir));
   }.bind(this));
 };

@@ -2,7 +2,7 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var scriptBase = require('../script-base');
-
+var backboneUtils = require('../util.js');
 
 var Generator = module.exports = function Generator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
