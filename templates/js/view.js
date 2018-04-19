@@ -2,46 +2,20 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'views/abstract',
-    'templates'
-], function($,
-    _,
-    Backbone,
-    AbstractView,
-    JST) {
+    'text!templates<%= dirPath %>/<%= name %>.html'
+], function ($, _, Backbone, <%= _.classify(name) %>template) {
 
-    'use strict';
-
-    var <%= _.classify(name) %>View = AbstractView.extend({
-        className: '<%= name %>',
-        template: JST['<%= jstPath %>'],
-
+    var <%= _.classify(name) %>View = Backbone.View.extend({
+        template: _.template(<%= _.classify(name) %>Template),
         events: {},
-
-        /* ----------------------------------------------------------------------------- *\
-           Public Methods
-        \* ----------------------------------------------------------------------------- */
-
-        /**
-        @method initialize
-
-        @return {null}
-        **/
-        initialize: function(opts) {
-            AbstractView.prototype.initialize.apply(this, arguments);
+        initialize: function () {
         },
-
-        /**
-        @method render
-
-        @return {<%= _.classify(name) %>View}
-        **/
-        render: function() {
+        render: function () {
             this.$el.html(this.template());
-
             return this;
         }
     });
 
     return <%= _.classify(name) %>View;
+
 });
