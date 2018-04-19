@@ -2,11 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/<%= this.dirPath %>/<%=this.name%>.html'
+    'text!templates/<%= dirPath %>/<%= name %>.html'
 ], function ($, _, Backbone, <%= _.classify(name) %>template) {
 
     var <%= _.classify(name) %>View = Backbone.View.extend({
-        template: _.template(<%= _.classify(name) %>template),
+        template: _.template(<%= _.classify(name) %>Template),
         events: {},
         initialize: function () {
         },
