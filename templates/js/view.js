@@ -2,7 +2,7 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates<%= dirPath %>/<%= name %>.html'
+    'text!template<%= dirPath %>/<%= name %>.html'
 ], function ($, _, Backbone, <%= _.classify(name) %>template) {
 
     var <%= _.classify(name) %>View = Backbone.View.extend({
