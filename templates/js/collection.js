@@ -1,10 +1,8 @@
 define([
     'underscore',
     'backbone',
-    'models/<%= pathToModel %><%= name %>'
-], function(_,
-    Backbone,
-    <%= _.classify(name) %>Model) {
+    'model/<%= pathToModel %><%= name %>'
+], function(_, Backbone, <%= _.classify(name) %>Model) {
 
     'use strict';
 

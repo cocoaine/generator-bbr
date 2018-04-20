@@ -18,5 +18,6 @@ Generator.prototype.createViewFiles = function createViewFiles() {
   this.dirPath = (typeof this.arguments[1] !== 'undefined') ? '/' + this.arguments[1] : '';
   this.pathToModel = (typeof this.arguments[2] !== 'undefined') ? this.arguments[2] + '/' : '';
 
+  this.copy('js/model.js', backboneUtils.rootPath() + 'model' + this.dirPath + '/' + this.name + '.js');
   this.copy('js/collection.js', backboneUtils.rootPath() + 'collection' + this.dirPath + '/' + this.name + '.js');
 };
