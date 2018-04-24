@@ -5,9 +5,9 @@ define([
 
     'use strict';
 
-    var <%= _.classify(lastName) %>Model = Backbone.Model.extend({
+    var <%= _.classify(lastName) %>ViewModel = Backbone.Model.extend({
         defaults: {}
     });
 
-    return <%= _.classify(lastName) %>Model;
+    return <%= _.classify(lastName) %>ViewModel;
 });
