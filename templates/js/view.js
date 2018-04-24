@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!template<%= dirPath %>/<%= name %>.html'
-], function ($, _, Backbone, <%= _.classify(lastName) %>template) {
+], function ($, _, Backbone, <%= _.classify(lastName) %>Template) {
 
     var <%= _.classify(lastName) %>View = Backbone.View.extend({
         template: _.template(<%= _.classify(lastName) %>Template),
