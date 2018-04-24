@@ -1,14 +1,14 @@
 define([
     'underscore',
     'backbone',
-    'model/<%= pathToModel %><%= name %>'
-], function(_, Backbone, <%= _.classify(name) %>Model) {
+    'model/temp_model'
+], function(_, Backbone, TempModel) {
 
     'use strict';
 
-    var <%= _.classify(name) %>Collection = Backbone.Collection.extend({
-        model: <%= _.classify(name) %>Model
+    var <%= _.classify(lastName) %>Collection = Backbone.Collection.extend({
+        model: TempModel
     });
 
-    return <%= _.classify(name) %>Collection;
+    return <%= _.classify(lastName) %>Collection;
 });

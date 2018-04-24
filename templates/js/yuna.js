@@ -2,10 +2,14 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'view/view_model<%= dirPath %>/<%= name %>',
     'text!template<%= dirPath %>/<%= name %>.html'
-], function ($, _, Backbone, <%= _.classify(lastName) %>template) {
+], function ($, _, YunaView, <%= _.classify(lastName) %>ViewModel, <%= _.classify(lastName) %>Template) {
 
-    var <%= _.classify(lastName) %>View = Backbone.View.extend({
+    'use strict test';
+
+    var <%= _.classify(lastName) %>View = YunaView.extend({
+        viewModel: <%= _.classify(lastName) %>ViewModel,
         template: _.template(<%= _.classify(lastName) %>Template),
         events: {},
         initialize: function () {
